@@ -1,0 +1,153 @@
+@import "../../assets/styles/veriables.scss";
+@import "../../assets/styles/mixins.scss";
+
+.steps {
+  // background: #333333fc;
+  position: relative;
+  background: url("../../assets/img/steps.jpg") center / cover no-repeat;
+  background-attachment: fixed;
+  padding: 120px 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #333333ed;
+    z-index: 0;
+  }
+  // .steps__container
+  &__container {
+    position: relative;
+    z-index: 2;
+  }
+  // .steps__body
+  &__body {
+    margin-top: 90px;
+    background: url("../../assets/icons/steps/way.png") no-repeat;
+    background-size: 100% 300px;
+    padding: 50px 0;
+  }
+  // .steps__title
+  &__title {
+  }
+  // .steps__row
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 0 50px;
+    position: relative;
+    z-index: 2;
+    &:first-child {
+      transform: translate(0, -85px);
+    }
+    &:last-child {
+      transform: translate(0, 50%);
+    }
+  }
+  // .steps__column
+  &__column {
+    flex: 0 1 30%;
+  }
+}
+
+.item-steps {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  // .item-steps__counter
+  &__counter {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #fff;
+    color: #333333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -9px;
+    left: 42px;
+  }
+  // .item-steps__img
+  &__img {
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: $orange;
+    img {
+      width: 40px;
+    }
+  }
+  // .item-steps__body
+  &__body {
+    margin-top: 20px;
+    color: #ffffff;
+  }
+  // .item-steps__title
+  &__title {
+    font-weight: 500;
+    font-size: 20px;
+  }
+  // .item-steps__text
+  &__text {
+  }
+}
+
+@media (max-width: $tablet) {
+  .steps {
+    padding: 70px 0;
+  }
+  .steps__body {
+    background: none;
+    padding: 0;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: calc(100% - 100px);
+      width: 6px;
+      top: 50px;
+      left: 32px;
+      background: #ffffff;
+    }
+  }
+  .steps__row {
+    transform: translate(0, 0) !important;
+    padding: 0;
+    flex-direction: column;
+    row-gap: 50px;
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  }
+  .item-steps {
+    flex-direction: row;
+    align-items: center;
+
+
+    &__body {
+      margin-top: 0;
+      padding: 0 0 0 15px;
+    }
+    &__img {
+      flex: 0 0 60px;
+      height: 60px;
+      img {
+        max-width:32px;
+      }
+    }
+
+    &__text {
+      margin: 10px 0 0 0;
+    }
+  }
+}

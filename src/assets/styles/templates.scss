@@ -1,0 +1,6 @@
+%title {
+  font-weight: 800;
+  line-height: 48px;
+  color: $title;
+  @include adaptiv-font(35, 23, 3);
+}

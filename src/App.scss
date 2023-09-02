@@ -1,0 +1,43 @@
+@import "./assets/styles/reset.scss";
+@import "./assets/styles/veriables.scss";
+@import "./assets/styles/mixins.scss";
+@import "./assets/styles/fonts.scss";
+
+#root {
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto;
+  font-size: 14px;
+  height: 100%;
+
+  .main {
+    flex: 1 1 auto;
+    padding: 40px 0;
+  }
+}
+
+._lock {
+  overflow: hidden;
+}
+
+._container {
+  max-width: $maxWidth + px;
+  padding: 0 $sideIndent + px;
+  margin: 0 auto;
+}
+
+._title {
+  @include adaptiv-font (60, 40, 3);
+  color: $orange;
+  font-weight: 800;
+}
+
+
+.TEMP {
+  min-height: 100px;
+  background-color: #fff;
+}
